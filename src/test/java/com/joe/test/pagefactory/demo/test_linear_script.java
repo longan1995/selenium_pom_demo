@@ -8,10 +8,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 /**
- * 这是一个线性脚本：从创建浏览器驱动，操作元素得到结果到关闭浏览器；完成一个测试用例。
  * 
- * @author Joe-tester
+ * TODO:这是一个线性脚本：从创建浏览器驱动，操作元素得到结果到关闭浏览器；完成一个测试用例。
  *
+ * @author Joe-Tester
+ * @time 2021年3月9日
+ * @file test_linear_script.java
  */
 public class test_linear_script {
 

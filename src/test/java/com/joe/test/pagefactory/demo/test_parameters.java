@@ -11,10 +11,11 @@ import org.testng.annotations.Test;
 
 /**
  * 
- * 注解@Parameters优化脚本
- * 
- * @author Joe-Tester
+ * TODO:注解@Parameters优化脚本
  *
+ * @author Joe-Tester
+ * @time 2021年3月9日
+ * @file test_parameters.java
  */
 public class test_parameters {
 	WebDriver driver = null;

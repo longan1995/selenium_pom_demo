@@ -9,17 +9,19 @@ import com.selenium.auto.pagafactory.SearchResultPage;
 
 /**
  * 
- * 这是一个po设计模式下的测试用例类
- * 
- * @author Joe-Tester
+ * TODO:这是一个po设计模式下的测试用例类
  *
+ * @author Joe-Tester
+ * @time 2021年3月9日
+ * @file test_baidu_search.java
  */
 public class test_baidu_search {
 
+	// 初始化页面对象，如果是测试用例通用，就在此处声明
 	public BaiduHomePage homePage;
 
 	/**
-	 * 每个用例类测试之前只执行一次
+	 * 需要对@Before注解理解
 	 */
 	@BeforeClass
 	public void bf() {
