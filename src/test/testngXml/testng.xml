@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="classes" thread-count="1">
+	<test verbose="2" preserve-order="false" name="testcase">
+		<parameter name="url" value="https://www.baidu.com" />
+		<parameter name="browser" value="chrome" />
+		<parameter name="content" value="selenium" />
+		<classes>
+			<class name="com.joe.test.pagefactory.demo.test_parameters" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

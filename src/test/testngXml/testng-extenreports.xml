@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="classes" thread-count="1">
+	<test verbose="2" preserve-order="false" name="testcase">
+		<parameter name="report.config" value="src/main/resources/extent-config.xml" />
+		<parameter name="system.info" value="com.selenium.auto.extenreports.MySystemInfo" />
+		<classes>
+			<class name="com.joe.test.pagefactory.demo.test_dataprovider" />
+		</classes>
+	</test> <!-- Test -->
+	<!-- 监听器，一般继承ITestListener，生成报告 -->
+	<listeners>
+		<listener class-name="com.selenium.auto.extenreports.MyExtentTestNgListener" />
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+	</listeners>
+</suite> <!-- Suite -->
