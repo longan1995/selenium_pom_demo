@@ -166,8 +166,15 @@ public class BasePage {
 	/**
 	 * 退出浏览器
 	 */
-	public void close() {
+	public void closeBrowser() {
 		driver.quit();
+	}
+	
+	/**
+	 * 打开浏览器
+	 */
+	public void openUrl(String url){
+		driver.get(url);
 	}
 
 }

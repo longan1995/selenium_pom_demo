@@ -22,6 +22,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+/**
+ *
+ * 拿来主义：别找到了，能看懂引用即可；
+ *
+ */
 public class MyExtentTestNgListener extends ExtentTestNgFormatter {
 
 	private static final String REPORTER_ATTR = "extentTestNgReporter";
@@ -41,7 +46,9 @@ public class MyExtentTestNgListener extends ExtentTestNgFormatter {
 	public MyExtentTestNgListener() {
 		setInstance(this);
 		testRunnerOutput = new ArrayList<>();
+		// 获取报告路径<包含文件名>
 		String reportPathStr = System.getProperty("reportPath");
+		// 这是文件路径
 		File reportPath;
 
 		try {
@@ -212,9 +219,6 @@ public class MyExtentTestNgListener extends ExtentTestNgFormatter {
 		}
 	}
 
-	/**
- * 
- */
 	public void beforeInvocation(IInvokedMethod iInvokedMethod,
 			ITestResult iTestResult) {
 		if (iInvokedMethod.isTestMethod()) {

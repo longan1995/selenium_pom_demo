@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.selenium.auto.po.HomePage;
+import com.selenium.auto.po.SearchResultPage;
 import com.selenium.auto.po.base.BrowserDriver;
 
 public class test_baidu_search {
@@ -34,7 +35,10 @@ public class test_baidu_search {
 	@Test
 	public void test_baidu_demo() {
 		HomePage homePage=new HomePage(driver);
-		homePage.search_input("hello world!!!");
+		SearchResultPage result=homePage.search_input("selenium");
+		result.checkSearchResult();
+		result.goToResultDetails();
+		
 //		driver.findElement(By.id("kw")).sendKeys("ssss");
 	}
 

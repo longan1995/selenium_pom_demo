@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Properties;
 
 /**
- * @Auther: xup
+ * @Auther: Joe-Tester
  * @Date: 2018/6/7 10:54
  * @Description:
  */
@@ -31,6 +31,7 @@ public class MySystemInfo implements SystemInfo {
 
 		Map<String, String> systemInfo = new HashMap<>();
 		try {
+			// 报告获取变量
 			properties.load(inputStream);
 			systemInfo.put("Environment:",
 					properties.getProperty("Environment"));

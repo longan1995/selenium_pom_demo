@@ -27,15 +27,18 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
+/**
+ * testng报告监听器
+ * 
+ * @author Joe-Tester
+ *
+ */
 public class TestNGReporterListener implements IReporter {
 
 	private static final String OUTPUT_DIR = "test-output/";
 	private static final String FILE_NAME = "DefindTestNGReporter_index.html";
 	private ExtentReports extent;
 
-	/**
-	 * 
-	 */
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,
 			String outputDirectory) {
 		// TODO Auto-generated method stub
@@ -126,9 +129,6 @@ public class TestNGReporterListener implements IReporter {
 		extent.flush();
 	}
 
-	/**
-	 * 
-	 */
 	private void buildTestNodes(ExtentTest extenttest, IResultMap tests,
 			Status status) {
 		// TODO Auto-generated method stub
