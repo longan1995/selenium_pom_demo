@@ -20,7 +20,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  * 
- * TODO:拿来即用
+ * TODO:拿来即用，附加一个excel工具类
  *
  * @author Joe-Tester
  * @time 2021年3月9日
@@ -38,7 +38,6 @@ public class ExcelUtils {
 	 * 加载excel
 	 * 
 	 * @param path
-	 *            excel文件路径
 	 */
 	public static void setExcelFile(String path) {
 
@@ -60,7 +59,8 @@ public class ExcelUtils {
 	 * 加载excel
 	 * 
 	 * @param path
-	 *            excel文件路径
+	 * @param sheetName
+	 * @throws Exception
 	 */
 	public static void setExcelFile(String path, String sheetName)
 			throws Exception {
@@ -85,7 +85,6 @@ public class ExcelUtils {
 		try {
 			//
 			DataFormatter formatter = new DataFormatter();
-			// BoundaryCells
 			//
 			XSSFCell[] boundaryCells = findCells(tableName);
 			//
