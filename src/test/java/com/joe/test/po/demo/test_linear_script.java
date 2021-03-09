@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 /**
- * 以登录百度，点击搜索selenium webdriver关键信息
+ * 线性脚本：以登录百度，点击搜索selenium webdriver关键信息
  * 
  * @ClassName:LoginSearchClickScene.java
  * @author : Joe-Tester
