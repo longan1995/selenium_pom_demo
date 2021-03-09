@@ -11,8 +11,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 /**
  * 根据配置文件中配置的信息来启动对应浏览器
@@ -24,15 +22,6 @@ public class GetBrowerDriver {
 
 	// 驱动程序待定
 	private static WebDriver driver = null;
-	// 超时时间
-	private final int TIMEOUT = 10;
-
-	public GetBrowerDriver() {
-		PageFactory.initElements(
-				new AjaxElementLocatorFactory(driver, TIMEOUT), this);
-	}
-
-	// WebDriverWait wait = new WebDriverWait(driver, TIMEOUT);
 
 	// 创建一个获取驱动的静态方法
 	public static WebDriver getWebDriver() {
@@ -73,6 +62,7 @@ public class GetBrowerDriver {
 		}
 		// 设置全局隐式等待时间 || 有显示等待隐式等待就不那么有效了
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
 		return driver;
 	}
 

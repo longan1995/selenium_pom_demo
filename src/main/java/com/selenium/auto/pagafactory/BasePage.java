@@ -16,8 +16,6 @@ public class BasePage extends GetBrowerDriver {
 	// 全局的webdirver
 	protected static WebDriver driver = GetBrowerDriver.getWebDriver();
 	
-	
-	public void openBrower(String url) {
-		driver.get(url);
-	}
+	// 超时时间，这个地方可以写入基类，作为全局变量
+	protected static int TIMEOUT = 10;    
 }

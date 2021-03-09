@@ -7,14 +7,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 /**
- * 在结果页面进行操作
  * 
- * @author Joe-Tester
+ * TODO:
  *
+ * @author Joe-Tester
+ * @time 2021年3月9日
+ * @file SearchResultPage.java
  */
 public class SearchResultPage extends BasePage {
-	
-    private final int TIMEOUT = 10;    
 
 	// 搜索结果，第一列
 	@FindBy(xpath = "//*[@id='1']//a[1]/em")
@@ -23,7 +23,8 @@ public class SearchResultPage extends BasePage {
 
 	// 默认构造函数
 	public SearchResultPage() {
-		PageFactory.initElements(new AjaxElementLocatorFactory(driver,TIMEOUT), this);
+		PageFactory.initElements(
+				new AjaxElementLocatorFactory(driver, TIMEOUT), this);
 	}
 
 	/**
