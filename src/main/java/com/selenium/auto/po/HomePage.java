@@ -49,8 +49,11 @@ public class HomePage extends BasePage {
 	 * @param content
 	 */
 	public SearchResultPage search_input(String content) {
+		// 输入搜索内容
 		getElement(search_input).sendKeys(content);
+		// 点击搜索
 		getElement(search_btn).click();
+		// 返回一个结果页
 		return new SearchResultPage(driver);
 	}
 

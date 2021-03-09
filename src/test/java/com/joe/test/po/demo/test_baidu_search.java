@@ -9,6 +9,14 @@ import com.selenium.auto.po.HomePage;
 import com.selenium.auto.po.SearchResultPage;
 import com.selenium.auto.po.base.BrowserDriver;
 
+/**
+ * 
+ * TODO:测试类
+ *
+ * @author Joe-Tester
+ * @time 2021年3月9日
+ * @file test_baidu_search.java
+ */
 public class test_baidu_search {
 
 	WebDriver driver;
@@ -21,8 +29,6 @@ public class test_baidu_search {
 		BrowserDriver browserDriver = new BrowserDriver();
 		driver=browserDriver.getBrowser();
 		driver.get("https://www.baidu.com");
-//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//		driver.manage().window().maximize();
 
 	}
 
@@ -38,8 +44,6 @@ public class test_baidu_search {
 		SearchResultPage result=homePage.search_input("selenium");
 		result.checkSearchResult();
 		result.goToResultDetails();
-		
-//		driver.findElement(By.id("kw")).sendKeys("ssss");
 	}
 
 }

@@ -12,17 +12,20 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
- * 页面基类，用来封装浏览器基础操作
  * 
- * @author Joe-Tester
+ * TODO:页面基类，用来封装浏览器基础操作
  *
+ * @author Joe-Tester
+ * @time 2021年3月9日
+ * @file BasePage.java
  */
 public class BasePage {
 
+	// 这是一个全局的driver，其他页面对象会继承该类的所有属性和方法
 	protected WebDriver driver;
 
 	/*
-	 * 构造方法
+	 * 构造方法：super()和this()类似,区别是，super()从子类中调用父类的构造方法，this()在同一类内调用其它方法
 	 */
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
@@ -32,14 +35,13 @@ public class BasePage {
 	 * 如果不声明上面带driver的构造函数，必须每次调用都需要传一个driver实例
 	 * 
 	 * @param locator
-	 * @param type
 	 * @return
 	 */
-	public WebElement getOneElement(String locator, String type) {
-		List<WebElement> elementsList = getElementsList(locator, type);
+	public WebElement getOneElement(By locator) {
+		List<WebElement> elementsList = getElementsList(locator);
 		int size = elementsList.size();
 		if (size == 1) {
-			System.out.println(type + "方法成功找到一个元素:" + locator);
+			System.out.println("方法成功找到一个元素:" + locator);
 			return elementsList.get(0);
 		} else if (size > 1) {
 			System.out.println("元素定位匹配多个!");
@@ -53,7 +55,6 @@ public class BasePage {
 	 * 获取页面元素 如果不声明上面带driver的构造函数，必须每次调用都需要传一个driver实例
 	 * 
 	 * @param locator
-	 * @param type
 	 * @return
 	 */
 	public WebElement getElement(By locator) {
@@ -70,21 +71,19 @@ public class BasePage {
 	 * 获取元素集合
 	 * 
 	 * @param locator
-	 * @param type
 	 * @return
 	 */
-	public List<WebElement> getElementsList(String locator, String type) {
-		type = type.toLowerCase();
+	public List<WebElement> getElementsList(By locator) {
 		List<WebElement> element = new ArrayList<WebElement>();
 		try {
-			element = this.driver.findElements(By.name(locator));
+			element = this.driver.findElements(locator);
 		} catch (NoSuchElementException e) {
-			System.out.println(type + "定位方法不支持!");
+			System.out.println("定位方法不支持!");
 		}
 		if (element.isEmpty()) {
-			System.out.println(type + "定位方法不支持,或<" + locator + ">元素未找到!");
+			System.out.println("定位方法不支持,或<" + locator + ">元素未找到!");
 		} else {
-			System.out.println(locator + "元素找到了!");
+			System.out.println(element + "元素找到了!");
 		}
 		return element;
 	}
@@ -125,12 +124,10 @@ public class BasePage {
 	 * 查找所有元素，如果集合为空，则一个元素未找到
 	 * 
 	 * @param locator
-	 * @param type
 	 * @return
 	 */
-	public boolean verifyElementIsPresent(String locator, String type) {
-		type = type.toLowerCase();
-		List<WebElement> els = getElementsList(locator, type);
+	public boolean verifyElementIsPresent(By locator) {
+		List<WebElement> els = getElementsList(locator);
 		if (!els.isEmpty()) {
 			System.out.println("页面元素存在");
 			return true;
@@ -169,11 +166,13 @@ public class BasePage {
 	public void closeBrowser() {
 		driver.quit();
 	}
-	
+
 	/**
 	 * 打开浏览器
+	 * 
+	 * @param url
 	 */
-	public void openUrl(String url){
+	public void openUrl(String url) {
 		driver.get(url);
 	}
 

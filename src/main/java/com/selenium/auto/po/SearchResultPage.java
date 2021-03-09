@@ -11,11 +11,17 @@ import org.openqa.selenium.WebDriver;
  */
 public class SearchResultPage extends BasePage {
 
+	/**
+	 * super()和this()类似,区别是，super()从子类中调用父类的构造方法，this()在同一类内调用其它方法
+	 * 
+	 * @param driver
+	 */
 	public SearchResultPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
 
+	// 测试元素定位器
 	By result_text = By.xpath("//*[@id='1']//a[1]/em");
 
 	/**

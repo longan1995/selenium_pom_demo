@@ -18,6 +18,14 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+/**
+ * 
+ * TODO:拿来即用
+ *
+ * @author Joe-Tester
+ * @time 2021年3月9日
+ * @file ExcelUtils.java
+ */
 public class ExcelUtils {
 
 	private static XSSFWorkbook ExcelWBook;
