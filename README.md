@@ -4,14 +4,14 @@
 # 框架技术
 ### 运行环境
 - 少不了的jdk环境：基本建议1.8以上
-- - jre是java运行环境，jdk是java开发环境
+- - 分清楚：jre是java运行环境，jdk是java开发环境
 - selenium框架支持java、python、ruby等等多种编程语言
 - 注意各种浏览器驱动选择：
 - - selenium与当前chrome浏览器的版本：http://chromedriver.storage.googleapis.com/index.html
 - - 火狐、ie的driver驱动分windows和linux版本
 - testng单元测试框架
 - maven项目管理工具
-- - pom中配置了testng依赖、selenium依赖
+- - pom中配置了testng依赖、selenium依赖、log依赖、poi依赖
 - allure生成报告插件
 - jenkins集成工具
 - - 不要去浪费时间去开发发送邮件的工具类，只要好好生成测试报告，因为这些东西在集成jenkins之后都会迎刃而解。  
@@ -134,10 +134,10 @@ po编程的本质，即页面元素数据与测试用例的分离及封装页面
 使用到的java技术是反射原理；即动态获取数据的方法名调用类中定义的方法。
 ```
 
-### 混合设计模式：po+关键字
+### 混合设计模式：po+关键字/数据驱动
 - 说明
 ```
-
+顾名思义：采用java反射机制从excel或其他数据源读取数据进行动态调用，完成数据+关键字驱动
 ```
 
 ## Maven项目管理工具

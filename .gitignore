@@ -1,6 +1,9 @@
 # Compiled class file
 *.class
 
+allure-results/*
+test-output/*
+
 # Log file
 *.log
 
